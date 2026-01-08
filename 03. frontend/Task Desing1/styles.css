@@ -1,4 +1,3 @@
-/* ========== RESET ========== */
 *,
 *::before,
 *::after {
@@ -7,7 +6,6 @@
   box-sizing: border-box;
 }
 
-/* ========== ROOT VARIABLES ========== */
 :root {
   --blue: #2563eb;
   --blue-dark: #1d4ed8;
@@ -23,7 +21,6 @@
   --transition-fast: 0.25s ease;
 }
 
-/* ========== GLOBAL ========== */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: var(--bg-page);
@@ -36,13 +33,20 @@ a {
   text-decoration: none;
 }
 
+element.style { 
+  width: 500px;
+  height: 500px;
+  
+  }
 ul {
   list-style: none;
 }
 
 img {
   display: block;
-  max-width: 100%;
+  width: 70px;
+  height: 70px;
+  border-radius: 0%;
 }
 
 .container {
@@ -51,7 +55,6 @@ img {
   margin: 0 auto;
 }
 
-/* ========== HEADER ========== */
 .site-header {
   background-color: var(--bg-white);
   box-shadow: 0 1px 0 var(--border-soft);
@@ -64,7 +67,7 @@ img {
 
 .header-inner {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   padding: 0.9rem 0;
 }
@@ -106,7 +109,6 @@ img {
   width: 100%;
 }
 
-/* Nav button */
 .btn-nav {
   font-size: 0.9rem;
   padding: 0.45rem 1.1rem;
@@ -129,7 +131,6 @@ img {
   box-shadow: 0 8px 22px rgba(37, 99, 235, 0.35);
 }
 
-/* ========== HERO 1 ========== */
 .hero {
   background-color: var(--bg-white);
 }
@@ -179,9 +180,9 @@ img {
 .hero-main-right img {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
+  height: 500px;
 }
 
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -201,15 +202,15 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--blue);
-  color: #ffffff;
-  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.4);
+  background-color: var(--bg-white);
+  color: var(--blue);
+  border: 1px solid var(--blue);
 }
 
 .btn-primary:hover {
   background-color: var(--blue-dark);
   transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.5);
+  box-shadow: 0 14px 30px rgba(255, 255, 255, 0.5);
 }
 
 .btn-ghost {
@@ -223,7 +224,6 @@ img {
   transform: translateY(-1px);
 }
 
-/* Hero play icon */
 .play-icon {
   width: 12px;
   height: 12px;
@@ -244,9 +244,8 @@ img {
   border-color: transparent transparent transparent var(--blue);
 }
 
-/* ========== HERO 2 ========== */
 .hero-secondary {
-  padding: 2.5rem 0 2.5rem;
+  padding: 2.5rem 0;
 }
 
 .hero-secondary-inner {
@@ -260,24 +259,58 @@ img {
   flex: 1 1 340px;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
-.circle-image-wrap {
-  width: 320px;
-  height: 320px;
+/* =========================
+   CIRCLE + IMAGE FIX
+========================= */
+/* .circle-image-wrap {
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #e5edff, #eef2ff);
+  position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  overflow: hidden;
+} */
+
+/* BLUE CIRCLE (BACKGROUND ONLY)
+.circle-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #0D42C9;
+  opacity: 0.12;
+  border-radius: 50%;
+  z-index: 0;
+} */
+
+/* OUTER SOFT RING */
+.circle-image-wrap::after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border: 4px solid #0D42C9;
+  border-radius: 50%;
+  opacity: 0.08;
+  z-index: -1;
 }
 
+/* IMAGE COMES OUTSIDE CIRCLE */
 .circle-image-wrap img {
-  width: 1200px;
-  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+  transform: translateY(-100px);
 }
 
+/* =========================
+   RIGHT CONTENT
+========================= */
 .hero-secondary-right {
   flex: 1 1 380px;
 }
@@ -291,6 +324,7 @@ img {
   color: var(--text-muted);
   margin-bottom: 0.8rem;
 }
+
 
 /* ========== GENERIC SECTION ========== */
 .section {
@@ -388,7 +422,7 @@ img {
 
 .consultant-image img {
   width: 100%;
-  height: 200px;
+  height: 280px;
   object-fit: cover;
 }
 
@@ -541,9 +575,9 @@ img {
   gap: 0.6rem;
 }
 
-.review-author img {
+/* .review-author img {
   border-radius: 50%;
-}
+} */
 
 .review-author h3 {
   font-size: 0.95rem;
@@ -562,6 +596,8 @@ img {
 /* ========== PRICING ========== */
 .section-pricing {
   background-color: var(--bg-white);
+  border: none; 
+  
 }
 
 .pricing-grid {
@@ -574,6 +610,7 @@ img {
 .pricing-card {
   text-align: center;
   padding: 1.8rem 1.4rem 1.6rem;
+  border: none; 
 }
 
 .plan-label {
@@ -602,16 +639,18 @@ img {
 }
 
 .pricing-card-featured {
-  border-color: var(--blue);
+  /* border-color: var(--blue); */
   box-shadow: 0 14px 30px rgba(249, 249, 249, 0.35);
 }
 
-/* ========== FOOTER ========== */
+/* =========================
+   FOOTER
+========================= */
 .site-footer {
   background-color: #ffffff;
-  color: #0015ff;
   margin-top: 2.5rem;
   padding-top: 2.2rem;
+  border-top: 1px solid #e5e7eb;
 }
 
 .footer-grid {
@@ -621,59 +660,66 @@ img {
   padding-bottom: 2rem;
 }
 
-.footer-logo {
+.footer-col h4 {
+  font-size: 1rem;
   margin-bottom: 0.8rem;
+  color: #111827;
+}
+
+.footer-logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
 }
 
 .footer-text {
   font-size: 0.9rem;
-  color: #000000;
+  color: #6b7280;
+  line-height: 1.6;
 }
 
-.footer-col h4 {
-  font-size: 1rem;
-  margin-bottom: 0.7rem;
+/* Footer links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-col li {
   font-size: 0.9rem;
-  color: #000000;
-  margin-bottom: 0.4rem;
+  color: #374151;
+  margin-bottom: 0.45rem;
   cursor: pointer;
-  transition: color var(--transition-fast), transform var(--transition-fast);
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .footer-col li:hover {
-  color: #000000;
-  transform: translateX(2px);
+  color: #2563eb;
+  transform: translateX(3px);
 }
 
+/* =========================
+   SOCIAL ICONS
+========================= */
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin-top: 0.9rem;
+}
+
+.social-icons i {
+  width: 36px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center
+}
 .footer-bottom {
-  border-top: 1px solid #111827;
+  border-top: 1px solid #e5e7eb;
   text-align: center;
-  padding: 0.8rem 0;
+  padding: 0.9rem 0;
   font-size: 0.85rem;
-  color: #000000;
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 900px) {
-  .hero-main-left h1 {
-    font-size: 2rem;
-  }
-
-  .hero-secondary-right h2,
-  .power-text h2 {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .main-nav {
-    display: none; /* simple mobile collapse (no JS menu) */
-  }
-
-  .hero-main {
-    padding-top: 2.2rem;
-  }
+  color: #6b7280;
 }
