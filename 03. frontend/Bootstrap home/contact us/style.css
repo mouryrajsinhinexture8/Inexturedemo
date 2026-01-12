@@ -6,7 +6,7 @@
 }
 /*BACKGROUND img*/
 .hero-bg {
-  background: url("/03. frontend/Bootstrap-3/img/background\ .jpg") center / cover no-repeat;
+  background: url("../contact us/img/background\ .jpg") center / cover no-repeat;
   position: relative;
 }
 

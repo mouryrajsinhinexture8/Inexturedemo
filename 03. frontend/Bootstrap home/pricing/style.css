@@ -9,7 +9,7 @@
 /*back img*/
 
 .hero-bg {
-  background: url("/03. frontend/Bootstrap/img/background.jpg") center / cover no-repeat;
+  background: url("../pricing/img/background.jpg") center / cover no-repeat;
   position: relative;
 }
 
