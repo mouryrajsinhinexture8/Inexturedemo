@@ -6,27 +6,33 @@
   <title>Business Consultant Landing Page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+  
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <header class="site-header">
     <div class="top-strip"></div>
 
     <div class="container header-inner">
       <div class="logo">LOGO</div>
 
-      <nav class="main-nav">
+      <nav class="main-nav" id="mainNav">
         <a href="#consultants" class="nav-link">Business Consultant</a>
         <a href="#about-us" class="nav-link">About Us</a>
-        <!-- <a href="#pricing" class="nav-link">Pricing</a> -->
-        <a href="#reviews" class="nav-link">Contact Us</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+
+        <a href="#auth" class="btn btn-nav">Login / Sign up</a>
       </nav>
 
-      <a href="#auth" class="btn btn-nav">Login / Sign up</a>
-    </div>
+      <button class="nav-toggle" id="navToggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>	
   </header>
 
   <main>
+    
     <section class="hero hero-main">
       <div class="container hero-main-inner">
         <div class="hero-main-left">
@@ -43,23 +49,27 @@
             <a href="#" class="btn btn-primary">Get Started</a>
             <a href="#" class="btn btn-ghost">
               <span class="play-icon"></span>
+
               Watch Video
             </a>
           </div>
         </div>
 
         <div class="hero-main-right">
-          <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/3cfc26d09fdec4c4c1d68d7a174714b35059988c.jpg" alt="Business meeting" style="width:  500px;" />
+          
+          <img src="./image/Rectangle 4548.png" alt="Business meeting" />
         </div>
       </div>
     </section>
 
+    
     <section class="hero hero-secondary">
       <div class="container hero-secondary-inner">
         <div class="hero-secondary-left">
-          <div class="circle-image-wrap">
-            <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/image (2).png" alt="Consultant" class="smb-image-layered"/>
-          </div>
+          
+            
+            <img src="./image/Frame 1261158088.png" alt="Consultant" />
+          
         </div>
 
         <div class="hero-secondary-right">
@@ -81,7 +91,7 @@
       </div>
     </section>
 
-    <!--FEATURES-->
+    
     <section class="section section-features" id="about-us">
       <div class="container">
         <header class="section-header">
@@ -90,11 +100,13 @@
           </h2>
         </header>
 
-        <!-- GRID -->
+        
         <div class="features-grid">
           <article class="card feature-card">
-            <div class="feature-icon"> 
-              <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/Group (1).png" alt="Business Consulting" style="width: 50px; height: 50px;"/>
+            <div class="feature-icon">
+              <div class="circle-image-wrap">
+              <img  src="./image/icon1.png" alt="Business Consulting"/>
+              </div>
             </div>
             <h3>Business Consulting Expertise</h3>
             <p>
@@ -105,7 +117,9 @@
 
           <article class="card feature-card">
             <div class="feature-icon">
-              <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/Group.png" alt="100% Percent Free" style="width: 50px; height: 50px;"/>
+              <div class="circle-image-wrap">
+              <img src="./image/icon2.png" alt="100% Percent Free"/>
+              </div>
             </div>
             <h3>100% Percent Free</h3>
             <p>
@@ -116,7 +130,9 @@
 
           <article class="card feature-card">
             <div class="feature-icon">
-              <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/Group (2).png" alt="Easy to Use Platform" style="width: 50px; height: 50px;"/>
+              <div class="circle-image-wrap">
+              <img src="./image/icon3.png" alt="Streamlined Easy to Use Platform"/>
+              </div>
             </div>
             <h3>Streamlined Easy to Use Platform</h3>
             <p>
@@ -128,6 +144,7 @@
       </div>
     </section>
 
+    
     <section class="section section-consultants" id="consultants">
       <div class="container">
         <header class="section-header consultants-header">
@@ -137,16 +154,16 @@
           <a href="#" class="btn btn-small btn-outline-blue">View All</a>
         </header>
 
-        <!-- GRID 3 x 2 -->
+        
         <div class="consultants-grid">
-          <!-- Card 1 -->
+          
           <article class="card consultant-card">
             <div class="consultant-image">
-              <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/45a356e4f10cd9ceea2070e3f09e534010575a1f.jpg" alt="Consultant" />
+              <img src="./image/boy1.jpg" alt="Consultant" />
             </div>
             <div class="consultant-body">
               <div class="consultant-top">
-                <h3>Amanda ward</h3>
+                <h3>Ross Geller</h3>
                 <span class="rate">$100 / Hr</span>
               </div>
               <p class="role">Marketing Consultant (10 yrs)</p>
@@ -163,14 +180,14 @@
             </div>
           </article>
 
-          <!-- Card 2 -->
+          
           <article class="card consultant-card">
             <div class="consultant-image">
-              <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/18454366248ee357ea0e79a2f736f1c5c021452f.png" alt="Consultant" />
+              <img src="./image/boy2.png" alt="Consultant"  />
             </div>
             <div class="consultant-body">
               <div class="consultant-top">
-                <h3>Clevednd Noah</h3>
+                <h3>Joey Tribbiani</h3>
                 <span class="rate">$100 / Hr</span>
               </div>
               <p class="role">HR Consultant (15 yrs)</p>
@@ -186,10 +203,11 @@
               </p>
             </div>
           </article>
- <!-- Card 3 -->
+
+          
           <article class="card consultant-card">
             <div class="consultant-image">
-              <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/762e486757353682af2ef9c92945cdd34e564d16.png" alt="Consultant" />
+              <img src="./image/boy3.png" alt="Consultant"/>
             </div>
             <div class="consultant-body">
               <div class="consultant-top">
@@ -210,14 +228,14 @@
             </div>
           </article>
 
-          <!-- Card 4 -->
+          
           <article class="card consultant-card">
             <div class="consultant-image">
-              <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/9a750cbd4dd3bc5c53a2eccdecbdfa0534683621.jpg" alt="Consultant" />
+              <img src="./image/boy4.jpg" alt="Consultant" />
             </div>
             <div class="consultant-body">
               <div class="consultant-top">
-                <h3>Amanda Ward</h3>
+                <h3>Arnold Reed</h3>
                 <span class="rate">$120 / Hr</span>
               </div>
               <p class="role">Strategy Consultant (8 yrs)</p>
@@ -234,14 +252,14 @@
             </div>
           </article>
 
-          <!-- Card 5 -->
+          
           <article class="card consultant-card">
             <div class="consultant-image">
-              <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/f9333f668af43703d8a9d8567a1db4ce8bad750e.jpg" alt="Consultant" />
+              <img src="./image/boy5.jpg" alt="Consultant" />
             </div>
             <div class="consultant-body">
               <div class="consultant-top">
-                <h3>Cleveland Noah</h3>
+                <h3>Christopher Noah</h3>
                 <span class="rate">$90 / Hr</span>
               </div>
               <p class="role">Finance Consultant (7 yrs)</p>
@@ -258,14 +276,14 @@
             </div>
           </article>
 
-          <!-- Card 6 -->
+          
           <article class="card consultant-card">
             <div class="consultant-image">
-              <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/48588321ff69f90e7d4eef1028e0f502f53fa5a6.jpg" alt="Consultant" />
+              <img src="./image/boy6.jpg" alt="Consultant" />
             </div>
             <div class="consultant-body">
               <div class="consultant-top">
-                <h3>Amanda Ward</h3>
+                <h3>Monica Geller</h3>
                 <span class="rate">$100 / Hr</span>
               </div>
               <p class="role">Marketing Consultant (10 yrs)</p>
@@ -285,11 +303,11 @@
       </div>
     </section>
 
-    <!-- ===== POWER UP SECTION ===== -->
+    
     <section class="section section-power">
       <div class="container power-inner">
         <div class="power-image">
-          <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/93f5f64ca014db5f62acdab875c51435907049be.jpg" alt="Team discussion" style="height: 500px; width: 500px;" />
+          <img src="./image/group.png" alt="Team discussion" />
         </div>
 
         <div class="power-text">
@@ -309,7 +327,7 @@
       </div>
     </section>
 
-    <!-- ===== REVIEWS ===== -->
+    
     <section class="section section-reviews" id="reviews">
       <div class="container">
         <header class="section-header">
@@ -317,8 +335,7 @@
             Check Out Recent <span class="accent-blue">Review</span>
           </h2>
         </header>
-
-        <!-- GRID -->
+        
         <div class="reviews-grid">
           <article class="card review-card">
             <p class="review-text">
@@ -327,7 +344,7 @@
             </p>
             <div class="review-bottom">
               <div class="review-author">
-                <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/18799e6e409be14a5e1a2a0b79b718aef7b7eef7.png" alt="Client" style="border-radius: 50%;"/>
+                <img src="./image/revie1.png" alt="Client" style="border-radius: 50%; width: 70px; height: 70px ;"/>
                 <div>
                   <h3>Maria Jannat
                   <span>Content Writer</span>
@@ -344,7 +361,7 @@
             </p>
             <div class="review-bottom">
               <div class="review-author">
-                <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/3cd69bb3aca7607fda182b3395ce0bd356cfad23.png" alt="Client" style="border-radius: 50%;"/>
+                <img src="./image/review2.png" alt="Client" style="border-radius: 50%; width: 70px; height: 70px ;"/>
                 <div>
                   <h3>Mithela Jone</h3>
                   <span>UI Designer</span>
@@ -361,7 +378,7 @@
             </p>
             <div class="review-bottom">
               <div class="review-author">
-                <img src="/home/jadeja/mouryarajsinh-jadeja/03. frontend/Task Desing1/image/3cd69bb3aca7607fda182b3395ce0bd356cfad23.png" alt="Client" style="border-radius: 50%;"/>
+                <img src="./image/review2.png" alt="Client" style="border-radius: 50%; width: 70px; height: 70px ;"/>
                 <div>
                   <h3>Mithela Jone</h3>
                   <span>UI Designer</span>
@@ -374,7 +391,7 @@
       </div>
     </section>
 
-    <!-- ===== PRICING ===== -->
+    
     <section class="section section-pricing" id="pricing">
       <div class="container">
         <header class="section-header">
@@ -383,7 +400,7 @@
           </h2>
         </header>
 
-        <!-- GRID -->
+        
         <div class="pricing-grid">
           <article class="card pricing-card">
             <p class="plan-label">Basic</p>
@@ -422,13 +439,14 @@
     </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  
+ <!-- ===== FOOTER ===== -->
 <footer class="site-footer" id="contact">
   <div class="container footer-grid">
 
     <!-- LOGO & ABOUT -->
     <div class="footer-col">
-      <div class="logo footer-logo">LOGO</div>
+      <div class="logo footer-logo" style="color: #1962ff;">LOGO</div>
       <p class="footer-text">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the industry's standard dummy text ever since.
@@ -461,8 +479,8 @@
     <div class="footer-col">
       <h4>Contact Information</h4>
       <ul>
-        <li>Call: 8849317978</li>
-        <li>Email: mouryarajsinh.inexture@gmail.com</li>
+        <li>Call: 1-800-371-1534</li>
+        <li>Email: info@test.com</li>
       </ul>
 
       <!-- SOCIAL ICONS -->
@@ -478,6 +496,18 @@
 
   <!-- FOOTER BOTTOM -->
   <div class="footer-bottom">
-    <p>© 2026 TestFigma. All rights reserved.</p>
+    <p>&copy; 2026 TestFigma. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const mainNav = document.getElementById("mainNav");
+
+  navToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("show");
+  });
+</script>
+
+</body>
+</html>
