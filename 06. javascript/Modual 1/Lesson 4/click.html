@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Button Click Counter</title>
+
+    <style>
+      body {
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="clickBtn">Click</button>
+
+    <br /><br />
+
+    <!-- Text area to show count -->
+    <textarea id="output" readonly>Button clicked: 0 count</textarea>
+
+    <script>
+      //step 1- initialize counter
+      let count = 0;
+
+      //step 2- get DOM elements
+      const button = document.getElementById("clickBtn");
+      const output = document.getElementById("output");
+
+      //step-3 Add event listener
+      button.addEventListener("click", () => {
+        //step-4Increment counter
+        count++;
+
+        //step5- update text area
+        output.value = `Button clicked: ${count} count`;
+      });
+    </script>
+  </body>
+</html>

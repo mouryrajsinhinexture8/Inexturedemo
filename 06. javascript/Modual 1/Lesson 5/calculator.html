@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>calculator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #f0f0f0;
+      }
+
+      .calculator {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        width: 280px;
+        color: #fff;
+      }
+
+      .display {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 24px;
+        text-align: right;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background: #111;
+        color: rgb(255, 255, 255);
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 10px;
+      }
+
+      #number-area {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      #number-buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      #extra-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      #operator-buttons {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      button {
+        padding: 12px;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        transition:
+          background 0.15s ease,
+          transform 0.05s ease;
+      }
+
+      button:active {
+        transform: scale(0.97);
+      }
+
+      .btn-number {
+        background: #333;
+        color: #fff;
+      }
+
+      .btn-extra {
+        background: #555;
+        color: #fff;
+      }
+
+      .btn-operator {
+        background: #ff9500;
+        color: #fff;
+      }
+
+      .btn-extra#equals {
+        background: #34c759;
+      }
+
+      .btn-extra#clear {
+        background: #ff0d00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <input id="display" class="display" type="text" readonly />
+
+      <div class="buttons">
+        <!-- Left side: numbers + C and = -->
+        <div id="number-area">
+          <div id="number-buttons"></div>
+
+          <div id="extra-buttons">
+            <button id="clear" class="btn-extra">C</button>
+            <button id="equals" class="btn-extra">=</button>
+          </div>
+        </div>
+
+        <!-- Right side: operators -->
+        <div id="operator-buttons"></div>
+      </div>
+    </div>
+
+    <script>
+      // -------------------------------
+      // State
+      // -------------------------------
+      const display = document.getElementById("display");
+      const numberButtonsContainer = document.getElementById("number-buttons");
+      const operatorButtonsContainer =
+        document.getElementById("operator-buttons");
+      const clearButton = document.getElementById("clear");
+      const equalsButton = document.getElementById("equals");
+
+      // Start with a "normal-ish" calculator layout
+      let digits = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0"];
+
+      let currentExpression = "";
+
+      //suffle
+      //function shuffle an array
+      function shuffleArray(array) {
+        const arr = array.slice();
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      }
+
+      //render number digits array
+      function renderNumberButtons() {
+        numberButtonsContainer.innerHTML = "";
+
+        digits.forEach((digit) => {
+          const btn = document.createElement("button");
+          btn.textContent = digit;
+          btn.className = "btn-number";
+          btn.addEventListener("click", () => handleNumberClick(digit));
+          numberButtonsContainer.appendChild(btn);
+        });
+      }
+
+      //render operator buttons it not suffle
+      function renderOperatorButtons() {
+        const operators = ["+", "-", "*", "/"];
+        operatorButtonsContainer.innerHTML = "";
+
+        operators.forEach((op) => {
+          const btn = document.createElement("button");
+          btn.textContent = op;
+          btn.className = "btn-operator";
+          btn.addEventListener("click", () => handleOperatorClick(op));
+          operatorButtonsContainer.appendChild(btn);
+        });
+      }
+
+      //shuffle number buttons asynchronously
+      function shuffleNumberButtonsAsync() {
+        return new Promise((resolve) => {
+          //simulate async behavior
+          setTimeout(() => {
+            digits = shuffleArray(digits);
+            renderNumberButtons();
+            resolve();
+          }, 100); // 100ms delay
+        });
+      }
+
+      //evaluate the expression asynchronously
+      function evaluateExpressionAsync(expression) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            try {
+              //use Function instead of eval, still only for simple demo
+              const result = Function(
+                '"use strict"; return (' + expression + ");",
+              )();
+              resolve(result);
+            } catch (error) {
+              reject(error);
+            }
+          }, 0);
+        });
+      }
+
+      // Async number click: update display, then await shuffle
+      async function handleNumberClick(digit) {
+        currentExpression += digit;
+        display.value = currentExpression;
+
+        // Wait until the shuffle (Promise) is finished
+        await shuffleNumberButtonsAsync();
+      }
+
+      function handleOperatorClick(op) {
+        if (!currentExpression && op !== "-") {
+          // Don't allow +,*,/ as first char; allow leading '-'
+          return;
+        }
+
+        const lastChar = currentExpression.slice(-1);
+        const isOperator = ["+", "-", "*", "/"].includes(lastChar);
+
+        // Replace last operator if user presses another operator
+        if (isOperator) {
+          currentExpression = currentExpression.slice(0, -1) + op;
+        } else {
+          currentExpression += op;
+        }
+
+        display.value = currentExpression;
+      }
+
+      clearButton.addEventListener("click", () => {
+        currentExpression = "";
+        display.value = "";
+      });
+
+      // Async equals: use await for the evaluation Promise
+      equalsButton.addEventListener("click", async () => {
+        if (!currentExpression) return;
+
+        try {
+          const result = await evaluateExpressionAsync(currentExpression);
+          display.value = result;
+          currentExpression = String(result);
+        } catch (error) {
+          display.value = "Error";
+          currentExpression = "";
+        }
+      });
+
+      //initial render
+      renderNumberButtons();
+      renderOperatorButtons();
+    </script>
+  </body>
+</html>

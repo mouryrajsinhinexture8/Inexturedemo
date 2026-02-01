@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>save username</title>
+  </head>
+  <body>
+    <input type="text" id="username" placeholder="Enter username" />
+    <button id="save">Save</button>
+
+    <p id="output"></p>
+
+    <script>
+      const input = document.getElementById("username");
+      const output = document.getElementById("output");
+
+      document.getElementById("save").addEventListener("click", () => {
+        localStorage.setItem("username", input.value);
+        output.textContent = "Saved Username: " + input.value;
+      });
+
+      // Load saved data
+      const savedUser = localStorage.getItem("username");
+      if (savedUser) {
+        output.textContent = "Saved Username: " + savedUser;
+      }
+    </script>
+  </body>
+</html>

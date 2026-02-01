@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Fetch Users</title>
+    <style>
+      #data {
+        background-color: rgb(230, 230, 236);
+        width: 500px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>User Details</h1>
+
+    <p id="status">Loading...</p>
+
+    <div id="data"></div>
+
+    <script>
+      const status = document.getElementById("status");
+      const dataDiv = document.getElementById("data");
+
+      //fetch data from a fake API link of json
+      fetch("https://jsonplaceholder.typicode.com/users")
+        //convert response to JSON
+        .then((response) => response.json())
+
+        //show the user data
+        .then((data) => {
+          //hide text
+          status.innerText = "";
+
+          //take first one by one users
+          data.slice(0, 3).forEach((user) => {
+            //make a new for ech
+            const div = document.createElement("div");
+
+            //add user details div
+            div.innerHTML = `
+      <p><b>Name:</b> ${user.name}</p>
+      <p><b>Email:</b> ${user.email}</p>
+      <p><b>City:</b> ${user.address.city}</p>
+      <hr>
+    `;
+
+            //add user to page
+            dataDiv.appendChild(div);
+          });
+        })
+
+        //error
+        .catch((error) => {
+          status.innerText = "Error loading data!";
+        });
+    </script>
+  </body>
+</html>
