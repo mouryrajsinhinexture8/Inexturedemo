@@ -713,3 +713,471 @@ body {
   color: #1D1D1D;
   text-decoration: underline;
 }
+
+/* ========================================
+   COMPREHENSIVE RESPONSIVE STYLES
+   Mobile First Approach with Progressive Enhancement
+======================================== */
+
+/* Mobile hamburger menu styling */
+.navbar-toggler {
+  border: none;
+  padding: 8px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23FF002E' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile First - Small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+  /* Navigation */
+  .nav-container {
+    padding: 0 16px;
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .navbar-brand img {
+    width: 30px;
+  }
+
+  .navbar-collapse {
+    background: #fff;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .navbar-nav {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 12px 0 !important;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .d-flex.gap-3 {
+    flex-direction: column;
+    gap: 10px !important;
+    width: 100%;
+  }
+
+  .btn-login, .btn-signup {
+    width: 100%;
+  }
+
+  /* Hero Section */
+  .hero-container {
+    height: auto;
+    padding: 40px 16px;
+  }
+
+  .hero-left {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-title {
+    width: 100%;
+  }
+
+  .hero-title h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .hero-title p {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn-contact {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-video {
+    justify-content: center;
+  }
+
+  .hero-right {
+    max-width: 100%;
+    margin-top: 30px;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    max-height: 300px;
+  }
+
+  /* Study Section */
+  .study-container {
+    height: auto;
+    padding: 40px 16px;
+  }
+
+  .study-image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .study-content {
+    max-width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .study-content h2 {
+    font-size: 24px;
+  }
+
+  .study-list {
+    text-align: left;
+    padding: 0 10px;
+  }
+
+  .study-list li {
+    justify-content: flex-start;
+    font-size: 14px;
+  }
+
+  /* Features Section */
+  .features-container {
+    padding: 40px 16px;
+  }
+
+  .features-heading h2 {
+    font-size: 24px;
+  }
+
+  .features-heading p {
+    font-size: 14px;
+  }
+
+  .feature-card {
+    padding: 20px;
+    height: auto;
+  }
+
+  /* Testimonials Section */
+  .testimonials-container {
+    padding: 40px 16px;
+  }
+
+  .testimonials-heading h2 {
+    font-size: 24px;
+  }
+
+  .testimonial-box {
+    padding: 20px;
+  }
+
+  .testimonial-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  /* About Image Section */
+  .abtimg-container {
+    padding: 30px 16px;
+  }
+
+  /* Footer */
+  .footer-container {
+    padding: 0 16px;
+  }
+
+  .footer-logo img {
+    width: 50px;
+    height: 48px;
+  }
+
+  .footer-logo span {
+    font-size: 24px;
+  }
+
+  .footer-links {
+    gap: 16px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .social {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-bottom p,
+  .footer-policy a {
+    font-size: 12px;
+  }
+
+  .footer-policy {
+    gap: 8px;
+  }
+}
+
+/* Tablets (768px and down) */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero-container {
+    height: auto;
+    padding: 50px 24px;
+  }
+
+  .hero-title h1 {
+    font-size: 36px;
+  }
+
+  .hero-title p {
+    font-size: 15px;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    max-height: 400px;
+  }
+
+  /* Study Section */
+  .study-container {
+    height: auto;
+    padding: 60px 24px;
+  }
+
+  .study-content h2 {
+    font-size: 28px;
+  }
+
+  /* Testimonials */
+  .testimonials-container {
+    padding: 50px 24px;
+  }
+
+  .testimonials-heading h2 {
+    font-size: 28px;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .footer-policy {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Medium devices (tablets, 992px and down) */
+@media (max-width: 992px) {
+  /* Navigation */
+  .navbar-collapse {
+    background: #fff;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .navbar-nav {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 12px 0 !important;
+  }
+
+  .d-flex.gap-3 {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px !important;
+  }
+
+  /* Hero Section */
+  .hero-container {
+    height: auto;
+    padding: 60px 40px;
+  }
+
+  .row.align-items-center {
+    flex-direction: column;
+  }
+
+  .hero-left, .hero-right {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-title {
+    width: 100%;
+  }
+
+  .hero-title h1 {
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .hero-title p {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-right {
+    margin-top: 40px;
+  }
+
+  /* Study Section */
+  .study-container {
+    height: auto;
+    padding: 80px 40px;
+  }
+
+  .study-image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+  }
+
+  .study-content {
+    max-width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .study-list li {
+    justify-content: center;
+  }
+
+  /* Features */
+  .features-container {
+    padding: 60px 40px;
+  }
+
+  /* Testimonials */
+  .testimonials-container {
+    padding: 60px 40px;
+  }
+
+  .testimonial-box {
+    width: 100%;
+  }
+
+  /* About Image */
+  .abtimg-container {
+    padding: 60px 40px;
+  }
+
+  /* Footer */
+  .footer-container {
+    padding: 0 40px;
+  }
+
+  .footer-top, .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-links, .footer-policy {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Large devices (desktops, 1200px and down) */
+@media (max-width: 1200px) {
+  .hero-container {
+    padding: 60px 60px;
+  }
+
+  .study-container {
+    padding: 100px 60px;
+  }
+
+  .features-container {
+    padding: 60px 60px;
+  }
+
+  .testimonials-container {
+    padding: 60px 60px;
+  }
+
+  .abtimg-container {
+    padding: 80px 60px;
+  }
+
+  .footer-container {
+    padding: 0 60px;
+  }
+}
+
+/* Extra large screens (1440px and up) */
+@media (min-width: 1441px) {
+  .hero-container,
+  .study-container,
+  .features-container,
+  .testimonials-container,
+  .footer-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
